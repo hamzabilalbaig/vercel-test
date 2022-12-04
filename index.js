@@ -19,15 +19,15 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({ path: "./backend/config/config.env" });
 }
 
-// const connectDatabase = () => {
-//   console.log(process.env.MONGO_URI);
-//   mongoose
-//     .connect(process.env.MONGO_URI)
-//     .then((con) => console.log(`Database Connected: ${con.connection.host}`))
-//     .catch((err) => console.log(err));
-// };
+const connectDatabase = () => {
+  console.log(process.env.MONGO_URI);
+  mongoose
+    .connect(process.env.MONGO_URI)
+    .then((con) => console.log(`Database Connected: ${con.connection.host}`))
+    .catch((err) => console.log(err));
+};
 
-// connectDatabase();
+connectDatabase();
 
 // cloudinary.config({
 //   cloud_name: process.env.CLOUDINARY_NAME,
