@@ -35,22 +35,22 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// // Using Middlewares
-// // app.use(express.json({ limit: "50mb" }));
-// // app.use(express.urlencoded({ limit: "50mb", extended: true }));
-// // app.use(cookieParser());
-// // app.use(fileUpload);
+// Using Middlewares
 // app.use(express.json({ limit: "50mb" }));
 // app.use(express.urlencoded({ limit: "50mb", extended: true }));
 // app.use(cookieParser());
-// app.use(
-//   fileUpload({
-//     limits: { fileSize: 50 * 1024 * 1024 },
-//     useTempFiles: true,
-//   })
-// );
+// app.use(fileUpload);
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(cookieParser());
+app.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles: true,
+  })
+);
 
-// app.use(cors());
+app.use(cors());
 
 // // Importing Routes
 // const post = require("./backend/routes/post");
