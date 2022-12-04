@@ -3,7 +3,7 @@ const Conversation = require("../models/Conversation");
 
 //new conv
 
-router.post("/", async (req, res) => {
+router.post("/createConversation", async (req, res) => {
   const newConversation = new Conversation({
     members: [req.body.senderId, req.body.receiverId],
   });
@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:userId", async (req, res) => {
+router.get("/getConversation/:userId", async (req, res) => {
   try {
     const conversation = await Conversation.find({
       members: { $in: [req.params.userId] },

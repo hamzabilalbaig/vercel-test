@@ -61,8 +61,8 @@ const messages = require("./backend/routes/messages");
 // Using Routes
 app.use("/api/v1", post);
 app.use("/api/v1", user);
-app.use("/api/conversations", conversations);
-app.use("/api/messages", messages);
+app.use("/api/v1", conversations);
+app.use("/api/v1", messages);
 
 app.listen(process.env.PORT, () =>
   console.log(`Example app listening on process.env.PORT ${process.env.PORT}!`)

@@ -3,7 +3,7 @@ const Message = require("../models/Message");
 
 //add
 
-router.post("/", async (req, res) => {
+router.post("/postMessage", async (req, res) => {
   const newMessage = new Message(req.body);
 
   try {
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:conversationId", async (req, res) => {
+router.get("/getMessage/:conversationId", async (req, res) => {
   try {
     const messages = await Message.find({
       conversationId: req.params.conversationId,
