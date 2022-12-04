@@ -64,7 +64,6 @@ app.use("/api/v1", user);
 app.use("/api/conversations", conversations);
 app.use("/api/messages", messages);
 
-app.get("/", (req, res) => res.send("Hello World! whith backend okokok"));
 app.listen(process.env.PORT, () =>
   console.log(`Example app listening on process.env.PORT ${process.env.PORT}!`)
 );
