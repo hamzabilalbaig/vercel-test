@@ -52,17 +52,17 @@ app.use(
 
 app.use(cors());
 
-// // Importing Routes
-// const post = require("./backend/routes/post");
-// const user = require("./backend/routes/user");
-// const conversations = require("./backend/routes/conversations");
-// const messages = require("./backend/routes/messages");
+// Importing Routes
+const post = require("./backend/routes/post");
+const user = require("./backend/routes/user");
+const conversations = require("./backend/routes/conversations");
+const messages = require("./backend/routes/messages");
 
-// // Using Routes
-// app.use("/api/v1", post);
-// app.use("/api/v1", user);
-// app.use("/api/conversations", conversations);
-// app.use("/api/messages", messages);
+// Using Routes
+app.use("/api/v1", post);
+app.use("/api/v1", user);
+app.use("/api/conversations", conversations);
+app.use("/api/messages", messages);
 
 app.get("/", (req, res) => res.send("Hello World! whith backend okokok"));
 app.listen(process.env.PORT, () =>
