@@ -64,7 +64,7 @@ if (process.env.NODE_ENV !== "production") {
 // app.use("/api/conversations", conversations);
 // app.use("/api/messages", messages);
 
-app.get("/", (req, res) => res.send("Hello World! whith backend"));
+app.get("/", (req, res) => res.send("Hello World! whith backend okokok"));
 app.listen(process.env.PORT, () =>
   console.log(`Example app listening on process.env.PORT ${process.env.PORT}!`)
 );
