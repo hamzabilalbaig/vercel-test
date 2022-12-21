@@ -10,7 +10,7 @@ exports.createReel = async (req, res) => {
     });
     const newReelData = {
       caption: req.body.caption,
-      reel: {
+      video: {
         public_id: myCloud.public_id,
         url: myCloud.secure_url,
       },
