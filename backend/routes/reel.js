@@ -15,15 +15,15 @@ const router = express.Router();
 router.route("/reel/upload").post(isAuthenticated, createReel);
 
 router
-  .route("/post/:id")
+  .route("/reel/:id")
   .get(isAuthenticated, likeAndUnlikeReel)
   .put(isAuthenticated, updateCaption)
   .delete(isAuthenticated, deleteReel);
 
-router.route("/posts").get(isAuthenticated, getReelOfFollowing);
+router.route("/reels").get(isAuthenticated, getReelOfFollowing);
 
 router
-  .route("/post/comment/:id")
+  .route("/reel/comment/:id")
   .put(isAuthenticated, commentOnReel)
   .delete(isAuthenticated, deleteComment);
 
