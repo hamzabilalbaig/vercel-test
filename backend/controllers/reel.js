@@ -276,7 +276,7 @@ exports.deleteComment = async (req, res) => {
 
 exports.getReelById = async (req, res) => {
   try {
-    const reel = await Reel.findById(req.body.id);
+    const reel = await Reel.findById(req.body.id).populate("comments.user");
     res.status(200).json({
       success: true,
       reel,
