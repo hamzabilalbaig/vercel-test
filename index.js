@@ -1,10 +1,3 @@
-// const express = require("express");
-// const app = express();
-// const port = 3000;
-
-// app.get("/", (req, res) => res.send("Hello World! msajdnsakdbash"));
-// app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
@@ -35,11 +28,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Using Middlewares
-// app.use(express.json({ limit: "50mb" }));
-// app.use(express.urlencoded({ limit: "50mb", extended: true }));
-// app.use(cookieParser());
-// app.use(fileUpload);
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
@@ -65,5 +53,5 @@ app.use("/api/v1", conversations);
 app.use("/api/v1", messages);
 
 app.listen(process.env.PORT, () =>
-  console.log(`Example app listening on process.env.PORT ${process.env.PORT}!`)
+  console.log(`app listening on process.env.PORT ${process.env.PORT}!`)
 );
