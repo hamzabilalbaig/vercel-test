@@ -4,8 +4,8 @@ const cloudinary = require("cloudinary");
 
 exports.createReel = async (req, res) => {
   try {
-    const myCloud = await cloudinary.uploader.upload(req.body.reel, {
-      resource_type: "video",
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.reel, {
+      resource_type: "auto",
       folder: "reels",
     });
     const newReelData = {
