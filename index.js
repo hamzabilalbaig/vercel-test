@@ -30,6 +30,17 @@ cloudinary.config({
 
 app.use(express.json({ limit: "150mb" }));
 app.use(express.urlencoded({ limit: "150mb", extended: true }));
+app.use(
+  express.raw({
+    type: [
+      "application/octet-stream",
+      "application/x-www-form-urlencoded",
+      "image/*",
+      "video/*",
+    ],
+    limit: 150 * 1024 * 1024,
+  })
+);
 app.use(cookieParser());
 app.use(
   fileUpload({
