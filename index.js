@@ -28,7 +28,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-app.use(express.json({ limit: "150mb" }));
+app.use(express.json({ limit: "111150mb" }));
 app.use(express.urlencoded({ limit: "150mb", extended: true }));
 app.use(
   express.raw({
