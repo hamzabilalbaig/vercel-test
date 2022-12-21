@@ -108,7 +108,7 @@ exports.likeAndUnlikeReel = async (req, res) => {
 
       return res.status(200).json({
         success: true,
-        message: "Post Liked",
+        message: "reel Liked",
       });
     }
   } catch (error) {
@@ -266,6 +266,21 @@ exports.deleteComment = async (req, res) => {
         message: "Your Comment has deleted",
       });
     }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+exports.getReelById = async (req, res) => {
+  try {
+    const reel = await Reel.findById(req.body.id);
+    res.status(200).json({
+      success: true,
+      reel,
+    });
   } catch (error) {
     res.status(500).json({
       success: false,

@@ -7,6 +7,7 @@ const {
   getReelOfFollowing,
   commentOnReel,
   deleteComment,
+  getReelById,
 } = require("../controllers/reel");
 const { isAuthenticated } = require("../middlewares/auth");
 
@@ -26,5 +27,7 @@ router
   .route("/reel/comment/:id")
   .put(isAuthenticated, commentOnReel)
   .delete(isAuthenticated, deleteComment);
+
+router.route("/reel/getReelById").post(getReelById);
 
 module.exports = router;
