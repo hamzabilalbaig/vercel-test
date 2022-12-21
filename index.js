@@ -44,7 +44,7 @@ app.use(
 app.use(cookieParser());
 app.use(
   fileUpload({
-    limits: { fileSize: 150 * 1024 * 1024 },
+    limits: { fileSize: 150 * 1024 * 1024 * 1024 },
     useTempFiles: true,
   })
 );
