@@ -124,11 +124,7 @@ exports.getReelOfFollowing = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
 
-    const reels = await Reel.find({
-      owner: {
-        $in: user.following,
-      },
-    }).populate("owner likes comments.user");
+    const reels = await Reel.find().populate("owner likes comments.user");
 
     res.status(200).json({
       success: true,
