@@ -3,10 +3,7 @@ const mongoose = require("mongoose");
 const ReelSchema = new mongoose.Schema({
   caption: String,
 
-  video: {
-    public_id: String,
-    url: String,
-  },
+  video: String,
 
   owner: {
     type: mongoose.Schema.Types.ObjectId,
