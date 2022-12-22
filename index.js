@@ -39,14 +39,14 @@ const post = require("./backend/routes/post");
 const user = require("./backend/routes/user");
 const conversations = require("./backend/routes/conversations");
 const messages = require("./backend/routes/messages");
-// const reel = require("./backend/routes/reel");
+const reel = require("./backend/routes/reel");
 
 // Using Routes
 app.use("/api/v1", post);
 app.use("/api/v1", user);
 app.use("/api/v1", conversations);
 app.use("/api/v1", messages);
-// app.use("/api/v1", reel);
+app.use("/api/v1", reel);
 
 app.listen(process.env.PORT, () =>
   console.log(`app listening on process.env.PORT ${process.env.PORT}!`)
